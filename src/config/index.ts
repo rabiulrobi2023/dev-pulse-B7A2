@@ -7,6 +7,7 @@ dotenv.config({
 
 const config = {
   PORT: process.env.PORT,
+  NEON_CONNECTING_STRING: process.env.NEON_CONNECTING_STRING,
 };
 
 export default config;
