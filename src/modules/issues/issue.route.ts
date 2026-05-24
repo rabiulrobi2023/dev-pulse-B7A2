@@ -8,4 +8,6 @@ router.post(
   auth("contributor", "maintainer"),
   IssueController.createIssue,
 );
+
+router.get("/", IssueController.getIssues);
 export const IssueRouter = router;

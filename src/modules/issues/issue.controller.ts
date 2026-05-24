@@ -22,6 +22,30 @@ const createIssue = async (req: Request, res: Response) => {
   }
 };
 
+const getIssues = async (req: Request, res: Response) => {
+  try {
+    const result = await IssuesService.getAllIssuesFromDB();
+    if (!result) {
+      sendError(res, {
+        statusCode: 404,
+        message: "There is no any issue",
+      });
+    }
+    sendResponse(res, {
+      statusCode: 200,
+      message: "Issues retrived successfully",
+      data: result,
+    });
+  } catch (error) {
+    sendError(res, {
+      statusCode: 500,
+      message: "Fail to retrived issues",
+      error: error,
+    });
+  }
+};
+
 export const IssueController = {
-    createIssue
-}
+  createIssue,
+  getIssues
+};
