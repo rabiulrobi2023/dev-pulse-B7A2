@@ -4,7 +4,12 @@ import express, {
   type Response,
 } from "express";
 import globalErrorHandler from "./middleware/globalErrorHandler";
+import router from "./routes";
+
 const app: Application = express();
+app.use(express.json());
+
+app.use(router);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({
