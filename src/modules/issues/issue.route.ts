@@ -2,6 +2,7 @@ import { Router } from "express";
 import { IssueController } from "./issue.controller";
 import auth from "../../middleware/auth";
 import { Role } from "../../constant";
+import { AuthController } from "../auth/auth.controller";
 
 const router = Router();
 router.post(
@@ -12,5 +13,11 @@ router.post(
 
 router.get("/", IssueController.getAllIssues);
 router.get("/:id", IssueController.getSingleIssue);
-router.patch("/:id",auth(Role.CONTRIBUTOR,Role.MAINAINER) ,IssueController.updateIssue);
+router.patch(
+  "/:id",
+  auth(Role.CONTRIBUTOR, Role.MAINAINER),
+  IssueController.updateIssue,
+);
+router.delete("/:id", auth(Role.MAINAINER), IssueController.deleteIssue);
+
 export const IssueRouter = router;

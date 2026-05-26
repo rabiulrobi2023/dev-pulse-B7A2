@@ -3,7 +3,7 @@ import type { Role } from "../constant";
 export interface ISendSuccess<T> {
   statusCode: number;
   message: string;
-  data: T;
+  data?: T;
 }
 
 export interface ISendError<T> {
