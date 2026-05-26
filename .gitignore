@@ -58,3 +58,4 @@ uploads/
 
 # Firebase config (if sensitive)
 firebase-adminsdk.json
+.vercel
