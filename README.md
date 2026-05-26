@@ -1,20 +1,20 @@
 # Dev Pulse Server
 Live URL:  https://assignment-02-nu-gold.vercel.app/
 ### Features:
- ###### Create User: 
+ #### Create User: 
 User can create an account as contributor or maintainer. User must provide name, email, password, and role
- ###### User Login: 
+ #### User Login: 
 After creating user account successfully user can login using registered email and password.
  ##### Create Issue: 
 Registered user can create an issue by providing issue title, description, and type.
 
- ###### Get all Issues: 
+ #### Get all Issues: 
 Registered user can view all issues.
 
   ###### Get Single Issue: 
 A registered user can view a specific issue using issue id.
 
- ###### Update Issue: 
+ #### Update Issue: 
 A registered user which role is contributor can update his own issues and maintainer  can any issues.
 
 
@@ -37,7 +37,29 @@ A registered user which role is contributor can update his own issues and mainta
 	- bcrypt
 
 - Create your folder structure as follows:
- ![[Pasted image 20260526221854.png]]
+
+```bash
+src/
+├── app/
+│   ├── modules/
+│   │   ├── auth/
+│   │   │   ├── auth.controller.ts
+│   │   │   ├── auth.service.ts
+│   │   │   ├── auth.route.ts
+│   │   │   └── auth.interface.ts
+│   │   ├── issue/
+│   │   │   ├── issue.controller.ts
+│   │   │   ├── issue.service.ts
+│   │   │   ├── issue.route.ts
+│   │   │   └── issue.interface.ts
+│   ├── middleware/
+│   ├── utils/
+│   └── app.ts
+├── config/
+├── server.ts
+└── package.json
+```
+
 
 ### API Endpoints
 
