@@ -2,7 +2,6 @@ import { Router } from "express";
 import { IssueController } from "./issue.controller";
 import auth from "../../middleware/auth";
 import { Role } from "../../constant";
-import { AuthController } from "../auth/auth.controller";
 
 const router = Router();
 router.post(

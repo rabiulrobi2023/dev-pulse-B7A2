@@ -84,7 +84,6 @@ const updatIssueIntoDB = async (
     throw new Error("Issue not found");
   }
 
-  console.log(user.id, issue.rows[0].reporter_id);
   if (user.role === "contributor" && user.id != issue.rows[0].reporter_id) {
     throw new Error("User have not permission to update others issue");
   }
